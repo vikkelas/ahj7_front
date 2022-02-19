@@ -1,0 +1,182 @@
+.body__conteiner {
+  position: relative;
+  margin: 200px auto;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-conteiner {
+  margin-top: 30px;
+}
+
+.create-newcard {
+  cursor: pointer;
+  display: inline-block;
+  max-width: 150px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(206, 219, 27);
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: rgb(194, 233, 52);
+  align-self: flex-end;
+}
+
+.create-newcard:hover {
+  background-color: rgba(133, 233, 52, 0.63);
+  border: 1px solid rgb(162, 219, 27);
+}
+
+.create-newcard:active {
+  background-color: rgba(37, 119, 48, 0.582);
+  border: 1px solid rgb(162, 219, 27);
+}
+
+.card {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 1px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: rgba(81, 226, 245, 0.301);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.card__title {
+  font-weight: bold;
+}
+
+.card__description {
+  display: block;
+  padding-top: 20px;
+  word-wrap: break-word;
+}
+
+.card__description {
+  display: none;
+}
+
+.card__check-mark {
+  margin-left: 10px;
+  padding: 2px;
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  background-color: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border: 1px solid black;
+}
+
+.card__check-mark--true {
+  background-image: url(../assets/check-mark.png);
+  background-color: greenyellow;
+}
+
+.card__check-mark::after {
+  position: absolute;
+  border-radius: 30px;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card__buttons {
+  display: flex;
+}
+
+.card__btn {
+  margin: auto 5px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 2px;
+  width: 28px;
+  height: 28px;
+  background-color: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.card__btn-change {
+  background-image: url(../assets/pencil.png)
+}
+
+.card__btn-delet {
+  background-image: url(../assets/delete.png)
+}
+
+.modal-window {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 300px;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.modal-window__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal-window__form {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.modal-window__label {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.modal-window__input {
+  width: 320px;
+  padding: 5px;
+}
+
+.modal-window__subscribe {
+  resize: none;
+}
+
+.modal-window__btns {
+  display: flex;
+  align-self: flex-end;
+  padding: 10px;
+}
+
+.modal-window__btn {
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 3px;
+  border-radius: 10px;
+}
