@@ -1,5 +1,4 @@
-import Request from './Request';
+import SubmitPage from './SubmitPage';
 
-const req = new Request();
-
-req.allTickets().then((data) => console.log(data)).catch((error) => console.error(error));
+const submit = new SubmitPage();
+submit.init();
