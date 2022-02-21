@@ -26,21 +26,21 @@ export default class Request {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
       const form = new FormData(document.forms.createCard);
-      const data = {};
-      data.name = form.get('name');
+      form.set('status', false);
+      form.set('created', new Date().toLocaleString());
       xhr.open('POST', `${this.url}?method=createTicket`);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.addEventListener('load', () => {
         if (xhr.status >= 200 && xhr.status < 300) {
           try {
-            resolve(xhr.response);
+            const res = JSON.parse(xhr.responseText);
+            resolve(res);
           } catch (e) {
             console.error(e);
             reject(e);
           }
         }
       });
-      xhr.send(data);
+      xhr.send(form);
     });
   }
 }
