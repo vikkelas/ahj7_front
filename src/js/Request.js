@@ -26,6 +26,8 @@ export default class Request {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
       const form = new FormData(document.forms.createCard);
+      const data = {};
+      data.name = form.get('name');
       xhr.open('POST', `${this.url}?method=createTicket`);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.addEventListener('load', () => {
@@ -38,7 +40,7 @@ export default class Request {
           }
         }
       });
-      xhr.send(form);
+      xhr.send(data);
     });
   }
 }
