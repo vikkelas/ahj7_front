@@ -1,6 +1,30 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.preloader {
+  position: relative;
+}
+
+.preloader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: rgba(43, 49, 45, 0.151);
+  background-image: url(../assets/5.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .body__conteiner {
   position: relative;
-  margin: 200px auto;
+  margin: 0 auto;
+  padding-top: 100px;
   max-width: 1000px;
   display: flex;
   flex-direction: column;
@@ -8,7 +32,7 @@
 }
 
 .card-conteiner {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .create-newcard {
@@ -53,17 +77,18 @@
 }
 
 .card__title {
+  word-wrap: break-word;
   font-weight: bold;
 }
 
 .card__description {
-  display: block;
+  display: none;
   padding-top: 20px;
   word-wrap: break-word;
 }
 
-.card__description {
-  display: none;
+.card__description--active {
+  display: flex;
 }
 
 .card__check-mark {

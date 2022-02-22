@@ -6,7 +6,7 @@ export default function renderPage(data) {
     card.classList.add('card');
     card.setAttribute('id', `${item.id}`);
     let checkCard = '';
-    if (item.status === true) {
+    if (item.status === 'true') {
       checkCard = 'card__check-mark--true';
     }
     card.insertAdjacentHTML('beforeend', `<div class="card__check-mark ${checkCard}"></div>

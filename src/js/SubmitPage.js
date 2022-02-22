@@ -33,7 +33,12 @@ export default class SubmitPage {
     this.cardEle.forEach((item) => {
       item.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log(e.target);
+
+        const des = document.querySelector('.card__description');
+        des.classList.toggle('card__description--active');
+        if (e.target.classList.contains('card__check-mark')) {
+          console.log('dsfdfsdffd');
+        }
       });
     });
   }
@@ -53,9 +58,8 @@ export default class SubmitPage {
           this.request.newTicket().then((data) => {
             this.body.removeChild(modalWindow);
             this.cards = data;
-            console.log(data);
-            // this.renderPage(this.cards);
-            // this.initEvBtnCard();
+            this.renderPage(this.cards);
+            this.initEvBtnCard();
           });
         }
       });

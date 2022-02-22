@@ -7,8 +7,12 @@ export default class Request {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
       xhr.open('GET', `${this.url}?method=allTikets`);
+      xhr.addEventListener('loadstart', () => {
+        document.querySelector('body').classList.add('preloader');
+      });
       xhr.addEventListener('load', () => {
         if (xhr.status >= 200 && xhr.status < 300) {
+          document.querySelector('body').classList.remove('preloader');
           try {
             const data = JSON.parse(xhr.responseText);
             resolve(data);
