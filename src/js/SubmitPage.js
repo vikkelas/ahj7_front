@@ -59,8 +59,8 @@ export default class SubmitPage {
           this.modal.deletCard();
           const btns = document.querySelector('.modal-window__btns');
           const deletWindow = document.querySelector('.delet-window');
-          btns.addEventListener('click', (e) => {
-            e.preventDefault(e);
+          btns.addEventListener('click', (ev) => {
+            ev.preventDefault(ev);
             if (e.target.classList.contains('modal-window__btn--close')) {
               this.body.removeChild(deletWindow);
             }
