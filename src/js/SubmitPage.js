@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import Request from './Request';
 import renderPage from './renderPage';
 import Modal from './Modal';
