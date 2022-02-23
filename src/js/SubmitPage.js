@@ -1,6 +1,6 @@
 import Request from './Request';
 import renderPage from './renderPage';
-import Modal from './Modal';
+import Modal from './Madal';
 
 export default class SubmitPage {
   constructor() {
