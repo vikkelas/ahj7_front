@@ -61,7 +61,7 @@ export default class SubmitPage {
           const btns = document.querySelector('.modal-window__btns');
           const deletWindow = document.querySelector('.delet-window');
           btns.addEventListener('click', (e) => {
-            e.preventDefault(e);
+            e.preventDefault();
             if (e.target.classList.contains('modal-window__btn--close')) {
               this.body.removeChild(deletWindow);
             }
