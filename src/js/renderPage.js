@@ -5,6 +5,7 @@ export default function renderPage(data) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.setAttribute('id', `${item.id}`);
+    card.setAttribute('status', `${item.status}`);
     let checkCard = '';
     if (item.status === 'true') {
       checkCard = 'card__check-mark--true';
