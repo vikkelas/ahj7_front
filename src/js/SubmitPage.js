@@ -1,5 +1,5 @@
 /* eslint-disable no-shadow */
-import Request from './Request';
+import RequestTickets from './RequestTickets';
 import renderPage from './renderPage';
 import Modal from './Modal';
 
@@ -9,7 +9,7 @@ export default class SubmitPage {
     this.cardEle = null;
     this.modalBtn = null;
     this.checkBtn = null;
-    this.request = new Request();
+    this.request = new RequestTickets();
     this.modal = new Modal();
     this.btnCreat = document.querySelector('.create-newcard');
     this.renderPage = renderPage;
@@ -22,7 +22,7 @@ export default class SubmitPage {
   }
 
   initPage() {
-    this.request.allTickets().then((data) => {
+    this.request.requestCard('GET', 'allTickets').then((data) => {
       this.cards = data;
       if (this.cards.length !== 0 && this.cards !== null) {
         this.renderPage(this.cards);
@@ -66,7 +66,7 @@ export default class SubmitPage {
               this.body.removeChild(deletWindow);
             }
             if (e.target.classList.contains('modal-window__btn--ok')) {
-              this.request.deletTicket(id).then((data) => {
+              this.request.requestCard('GET', 'deletTicket', id).then((data) => {
                 this.zeroing(deletWindow, data);
               });
             }
@@ -81,7 +81,7 @@ export default class SubmitPage {
         const cardEdit = e.target.closest('div.card');
         const status = cardEdit.getAttribute('status');
         const id = cardEdit.getAttribute('id');
-        this.request.changeCheck(id, status).then((data) => {
+        this.request.requestCard('GET', 'changeCheck', id, status).then((data) => {
           this.cards = data;
           this.cardEle = null;
           this.modalBtn = null;
@@ -130,13 +130,13 @@ export default class SubmitPage {
   }
 
   creatReqNewTick(modalWindow) {
-    this.request.newTicket().then((data) => {
+    this.request.requestCard('POST', 'createTicket').then((data) => {
       this.zeroing(modalWindow, data);
     });
   }
 
   editTicket(modalWindow, id) {
-    this.request.editTicket(id).then((data) => {
+    this.request.requestCard('POST', 'editTicket', id).then((data) => {
       this.zeroing(modalWindow, data);
     });
   }
